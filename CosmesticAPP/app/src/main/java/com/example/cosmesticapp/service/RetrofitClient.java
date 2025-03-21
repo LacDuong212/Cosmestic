@@ -7,7 +7,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
-    private static final String BASE_URL = "http://MyIP:8080/"; // Replace with your actual server URL
+    private static final String BASE_URL = "http://192.168.128.57:8080/"; // Replace with your actual server URL
     private static RetrofitClient instance;
     private Retrofit retrofit;
 
@@ -37,4 +37,17 @@ public class RetrofitClient {
 
         return retrofitstatic;
     }
+
+    public static synchronized RetrofitClient getInstance() {
+        if (instance == null) {
+            instance = new RetrofitClient();
+        }
+        return instance;
+    }
+
+    public ApiService getApi() {
+        return retrofit.create(ApiService.class);
+    }
+
+
 }
