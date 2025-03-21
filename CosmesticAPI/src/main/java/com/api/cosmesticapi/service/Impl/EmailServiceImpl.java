@@ -15,7 +15,7 @@ public class EmailServiceImpl implements EmailService {
 
 
     @Override
-    public void sendOTPEmail(String to, String otp) {
+    public void sendOTPEmail(String to, String otp) { // 22110394- Ong Vĩnh Phát
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(to);
         message.setSubject("Your OTP for Account Activation");
@@ -40,7 +40,7 @@ public class EmailServiceImpl implements EmailService {
     }
 
     @Override
-    public String generateOtp() { //Dương Nguyễn Hoài Bảo - 22110283
+    public String generateOtp() { // 22110394 - Ong Vĩnh Phát
         Random random = new Random();
         int otp = 100000 + random.nextInt(900000);
         return String.valueOf(otp);

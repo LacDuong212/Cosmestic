@@ -1,10 +1,10 @@
 package com.api.cosmesticapi.service;
 
 
-import com.api.cosmesticapi.DTO.OtpVerificationRequest;
-import com.api.cosmesticapi.DTO.RegistrationRequest;
-import com.api.cosmesticapi.DTO.RegistrationResponse;
-import com.api.cosmesticapi.DTO.VerificationResponse;
+import com.api.cosmesticapi.dto.OtpVerificationRequest;
+import com.api.cosmesticapi.dto.RegistrationRequest;
+import com.api.cosmesticapi.dto.RegistrationResponse;
+import com.api.cosmesticapi.dto.VerificationResponse;
 import com.api.cosmesticapi.entity.OTP;
 import com.api.cosmesticapi.entity.User;
 import com.api.cosmesticapi.repository.OTPRepository;

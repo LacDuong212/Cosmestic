@@ -7,7 +7,8 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface OTPRepository extends JpaRepository<OTP, Integer> {
+public interface OTPRepository extends JpaRepository<OTP, Long> {
     Optional<OTP> findByEmailAndCode(String email, String code);
+
     Optional<OTP> findByEmail(String email);
 }

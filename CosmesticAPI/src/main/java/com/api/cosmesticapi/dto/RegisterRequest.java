@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class RegisterRequest { //Dương Nguyễn Hoài Bảo - 22110283
+public class RegisterRequest { // 22110394 - Ong Vĩnh Phát
     private String username;
     private String password;
     private String email;

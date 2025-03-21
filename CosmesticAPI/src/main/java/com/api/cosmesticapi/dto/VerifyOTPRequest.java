@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class VerifyOTPRequest { //Dương Nguyễn Hoài Bảo - 22110283
+public class VerifyOTPRequest { // 22110394 - Ong Vĩnh Phát
     private String email;
     private String otp;
 
