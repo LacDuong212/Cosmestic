@@ -13,12 +13,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.cosmesticapp.R;
 import com.example.cosmesticapp.adapter.CategoryAdapter;
 import com.example.cosmesticapp.model.Category;
+import com.example.cosmesticapp.service.ApiService;
+import com.example.cosmesticapp.service.RetrofitClient;
 
 import java.util.List;
 
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class HomeFragment extends Fragment {
 
-    private static APIService apiService;
+    private static ApiService apiService;
     private static List<Category> categoryList;
     private static CategoryAdapter categoryAdapter;
     private static RecyclerView rvCate;
@@ -34,34 +39,21 @@ public class HomeFragment extends Fragment {
 
     private void getCategory() {
         rvCate = rvCate.findViewById(R.id.rvCategory);
-        apiService = RetrofitClient.getRetrofit().create(APIService.class);
-        apiService.getCategoriesAll().enqueue(new Callback<List<Category>>() {
+        apiService = RetrofitClient.getClient("http://localhost:8080/api/categories").create(ApiService.class);
+        apiService.getAllCategories().enqueue(new Callback<List<Category>>() {
             @Override
-            public void onResponse(Call<List<Category>> call, Response<List<Category>> response) {
-                if (response.isSuccessful()) {
-                    categoryList = response.body();
-
-                    categoryAdapter = new CategoryAdapter(HomeFragment.this, categoryList);
-                    rvCate.setHasFixedSize(true);
-
-                    RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(
-                            getApplicationContext(),
-                            LinearLayoutManager.HORIZONTAL,
-                            false
-                    );
-
-                    rvCate.setLayoutManager(layoutManager);
-                    rvCate.setAdapter(categoryAdapter);
-                    categoryAdapter.notifyDataSetChanged();
-                } else {
-                    //int statusCode = response.code();
-                }
+            public void onResponse(retrofit2.Call<List<Category>> call, Response<List<Category>> response) {
+                categoryList = response.body();
+                categoryAdapter = new CategoryAdapter(getContext(), categoryList);
+                rvCate.setAdapter(categoryAdapter);
+                rvCate.setLayoutManager(new LinearLayoutManager(getContext()));
             }
 
             @Override
-            public void onFailure(Call<List<Category>> call, Throwable t) {
-                Log.d("logg", t.getMessage());
+            public void onFailure(retrofit2.Call<List<Category>> call, Throwable t) {
             }
-        });
+        } );
     }
+
+    private
 }

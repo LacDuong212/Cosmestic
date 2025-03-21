@@ -11,6 +11,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public interface ApiService {
     @POST("api/auth/register")
@@ -19,6 +20,9 @@ public interface ApiService {
     @POST("api/auth/verify-otp")
     Call<ApiResponse> verifyOTP(@Body VerifyOTPRequest verifyOTPRequest);
 
-    @GET("categories.php")
+    @GET("/api/categories")
     Call<List<Category>> getAllCategories();
+
+    @GET("/api/products/category/{categoryId}/price-asc")
+    Call<List<Product>> getProductsByCategoryOrderByPriceAsc(@Path("categoryId") int categoryId);
 }
