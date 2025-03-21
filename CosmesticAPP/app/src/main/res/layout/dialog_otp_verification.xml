@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="16dp">
 
@@ -9,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="We've sent a verification code to your email address. Please enter the code below to verify your account."
-        android:textSize="16sp"
+        android:textSize="18dp"
         android:textColor="#333333"
         android:layout_marginBottom="16dp"/>
 
@@ -35,6 +36,11 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Resend"
+            android:background="@color/DarkFontColor"
+            android:textColor="@color/FontColor"
+            android:textColorLink="@color/DarkFontColor"
+            android:textSize="18sp"
+            app:backgroundTint="@color/DarkFontColor"
             android:textAllCaps="false"
             android:layout_marginEnd="8dp"/>
 
@@ -45,6 +51,11 @@
             android:layout_weight="1"
             android:text="Verify"
             android:textAllCaps="false"
+            android:background="@color/DarkFontColor"
+            android:textColor="@color/FontColor"
+            android:textColorLink="@color/DarkFontColor"
+            android:textSize="18sp"
+            app:backgroundTint="@color/DarkFontColor"
             android:backgroundTint="#3F51B5"/>
     </LinearLayout>
 
