@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
         editor.apply();
 
         registerText = findViewById(R.id.registerText);
-        registerText.setOnClickListener(v -> {
+        registerText.setOnClickListener(v -> {     // 22110394 - Ong Vĩnh Phát
             Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
             startActivity(intent);
             finish();

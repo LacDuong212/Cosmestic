@@ -6,7 +6,7 @@ import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class RetrofitClient {
+public class RetrofitClient {     // 22110394 - Ong Vĩnh Phát
     private static final String BASE_URL = "http://192.168.128.57:8080/"; // Replace with your actual server URL
     private static RetrofitClient instance;
     private Retrofit retrofit;
