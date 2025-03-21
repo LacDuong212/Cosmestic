@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace = "com.example.cosmesticapp"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.cosmesticapp"
@@ -40,4 +40,16 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
+    // Retrofit for API calls
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+
+    // OkHttp for network requests
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
+
+    // Gson for JSON parsing
+    implementation(libs.gson)
+
 }
