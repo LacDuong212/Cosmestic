@@ -1,3 +1,4 @@
+//Thuy Duong
 package com.example.cosmesticapp.activity;
 
 import android.content.Intent;
