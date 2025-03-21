@@ -1,4 +1,4 @@
-package com.api.cosmesticapi.model;
+package com.api.cosmesticapi.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;

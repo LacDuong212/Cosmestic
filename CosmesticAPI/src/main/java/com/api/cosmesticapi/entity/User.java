@@ -1,6 +1,5 @@
-package com.api.cosmesticapi.model;
+package com.api.cosmesticapi.entity;
 
-import com.phatbee.backendmopr.enums.Gender;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,7 +22,7 @@ public class User implements Serializable {
     @Column(unique = true)
     protected String email;
     @Enumerated(EnumType.STRING)
-    protected Gender gender;
+    protected String gender;
     protected String image;
 
 }
