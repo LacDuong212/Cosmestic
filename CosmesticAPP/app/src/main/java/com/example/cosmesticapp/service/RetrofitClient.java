@@ -9,11 +9,9 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
-    private static final String BASE_URL = "http://192.168.224.57:8080/";
+    private static final String BASE_URL = "http://192.168.1.3:8080/";
     private static RetrofitClient instance;
     private Retrofit retrofit;
-
-    private static Retrofit retrofitstatic;
 
     private RetrofitClient() {
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
@@ -27,17 +25,6 @@ public class RetrofitClient {
                 .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-    }
-
-    public static Retrofit getClient(String baseUrl) {
-        if (retrofitstatic == null) {
-            retrofitstatic = new Retrofit.Builder()
-                    .baseUrl(baseUrl)
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
-        }
-
-        return retrofitstatic;
     }
 
     public static synchronized RetrofitClient getInstance() {
