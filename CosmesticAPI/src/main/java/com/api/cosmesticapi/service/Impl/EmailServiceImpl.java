@@ -25,7 +25,7 @@ public class EmailServiceImpl implements EmailService {
         mailSender.send(message);
     }
     @Override
-    public boolean sendEmail(String to, String subject, String text) {
+    public boolean sendEmail(String to, String subject, String text) { //Dương Nguyễn Hoài Bảo - 22110283
         try {
             SimpleMailMessage message = new SimpleMailMessage();
             message.setTo(to);
@@ -40,14 +40,14 @@ public class EmailServiceImpl implements EmailService {
     }
 
     @Override
-    public String generateOtp() {
+    public String generateOtp() { //Dương Nguyễn Hoài Bảo - 22110283
         Random random = new Random();
         int otp = 100000 + random.nextInt(900000);
         return String.valueOf(otp);
     }
 
     @Override
-    public boolean sendOtp(String email, String otp) {
+    public boolean sendOtp(String email, String otp) { //Dương Nguyễn Hoài Bảo - 22110283
         String subject = "Password Reset OTP";
         String message = "Your OTP for password reset is: " + otp;
         return sendEmail(email, subject, message);
