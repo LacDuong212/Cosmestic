@@ -31,7 +31,7 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/botNav"
         android:layout_width="match_parent"
-        android:layout_height="90dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         app:menu="@menu/nav_main_bot"
         app:labelVisibilityMode="labeled"

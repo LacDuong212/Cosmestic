@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -82,7 +83,7 @@ public class HomeFragment extends Fragment implements CategoryAdapter.OnCategory
                     List<Product> productList = response.body();
                     productAdapter = new ProductAdapter(getContext(), productList);
                     rvProd.setAdapter(productAdapter);
-                    rvProd.setLayoutManager(new LinearLayoutManager(getContext()));
+                    rvProd.setLayoutManager(new GridLayoutManager(requireContext(), 3, GridLayoutManager.VERTICAL, false));
                 } else {
                     Toast.makeText(getContext(), "Failed to load products", Toast.LENGTH_SHORT).show();
                 }
