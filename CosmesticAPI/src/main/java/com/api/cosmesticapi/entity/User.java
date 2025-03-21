@@ -25,4 +25,6 @@ public class User implements Serializable {
     protected String gender;
     protected String image;
 
+    protected boolean active;
+
 }
