@@ -11,6 +11,8 @@ public class RetrofitClient {
     private static RetrofitClient instance;
     private Retrofit retrofit;
 
+    private static Retrofit retrofitstatic;
+
     private RetrofitClient() {
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .connectTimeout(60, TimeUnit.SECONDS)
@@ -26,13 +28,13 @@ public class RetrofitClient {
     }
 
     public static Retrofit getClient(String baseUrl) {
-        if (retrofit == null) {
-            retrofit = new Retrofit.Builder()
+        if (retrofitstatic == null) {
+            retrofitstatic = new Retrofit.Builder()
                     .baseUrl(baseUrl)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
 
-        return retrofit;
+        return retrofitstatic;
     }
 }
