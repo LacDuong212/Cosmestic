@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".ForgetPassActivity">
+    tools:context=".activity.ForgetPassActivity">
 
     <TextView
         android:id="@+id/txtQuen"
@@ -52,7 +52,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageButton
-        android:id="@+id/imageButton5"
+        android:id="@+id/imageBtnBack"
         android:layout_width="49dp"
         android:layout_height="47dp"
         android:layout_marginBottom="32dp"
