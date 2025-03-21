@@ -11,10 +11,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cosmesticapp.R;
+import com.example.cosmesticapp.activity.MainActivity;
 import com.example.cosmesticapp.adapter.CategoryAdapter;
 import com.example.cosmesticapp.model.Category;
 
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class HomeFragment extends Fragment {
 
@@ -41,7 +46,7 @@ public class HomeFragment extends Fragment {
                 if (response.isSuccessful()) {
                     categoryList = response.body();
 
-                    categoryAdapter = new CategoryAdapter(HomeFragment.this, categoryList);
+                    categoryAdapter = new CategoryAdapter(MainActivity.this, categoryList);
                     rvCate.setHasFixedSize(true);
 
                     RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(
