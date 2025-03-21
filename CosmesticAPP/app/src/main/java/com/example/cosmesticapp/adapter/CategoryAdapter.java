@@ -29,7 +29,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_category, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout., parent, false);
         return new MyViewHolder(view);
     }
 
@@ -57,8 +57,8 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            images = itemView.findViewById(R.id.image_cate);
-            tenSp = itemView.findViewById(R.id.tvNameCategory);
+            images = itemView.findViewById(R.id.cateImage);
+            tenSp = itemView.findViewById(R.id.cateName);
         }
     }
 }
