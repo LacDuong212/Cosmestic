@@ -7,17 +7,16 @@ Welcome to the Cosmetics Store mobile application repository! This Android-based
 Here are some screenshots showcasing the app's interface:
 
 ### Intro
-![Intro](https://raw.githubusercontent.com/LacDuong212/Cosmestic/refs/heads/master/screenshots/Home.jpg)
+<img src="https://raw.githubusercontent.com/LacDuong212/Cosmestic/refs/heads/master/screenshots/Intro.jpg" width="250" alt="Intro">
 
 ### Log In Page
-![Log In](https://raw.githubusercontent.com/LacDuong212/Cosmestic/refs/heads/master/screenshots/Log_In.jpg)
+<img src="https://raw.githubusercontent.com/LacDuong212/Cosmestic/refs/heads/master/screenshots/Log_In.jpg" width="250" alt="Log In">
 
 ### Sign Up Page
-![Sign Up](https://raw.githubusercontent.com/LacDuong212/Cosmestic/refs/heads/master/screenshots/Sign_Up.jpg)
+<img src="https://raw.githubusercontent.com/LacDuong212/Cosmestic/refs/heads/master/screenshots/Sign_Up.jpg" width="250" alt="Sign Up">
 
 ### Home Page
-![Home](https://raw.githubusercontent.com/LacDuong212/Cosmestic/refs/heads/master/screenshots/Home.jpg)
-
+<img src="https://raw.githubusercontent.com/LacDuong212/Cosmestic/refs/heads/master/screenshots/Home.jpg" width="250" alt="Home">
 
 ## Technology Stack
 - **Frontend**: Android Native (Java)
