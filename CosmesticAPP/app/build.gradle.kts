@@ -9,7 +9,7 @@ android {
     defaultConfig {
         applicationId = "com.example.cosmesticapp"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -40,16 +40,4 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-
-    // Retrofit for API calls
-    implementation(libs.retrofit)
-    implementation(libs.converter.gson)
-
-    // OkHttp for network requests
-    implementation(libs.okhttp)
-    implementation(libs.logging.interceptor)
-
-    // Gson for JSON parsing
-    implementation(libs.gson)
-
 }

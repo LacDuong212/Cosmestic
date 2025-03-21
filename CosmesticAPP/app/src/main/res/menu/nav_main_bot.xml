@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_home_ffffff"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/ic_profile_ffffff"
+        android:title="Profile" />
+
+    <!-- empty, as a placeholder -->
+    <item
+        android:id="@+id/empty"
+        android:enabled="false"
+        android:icon="@android:color/transparent"
+        android:title="" />
+
+    <item
+        android:id="@+id/nav_support"
+        android:icon="@drawable/ic_support_ffffff"
+        android:title="Support" />
+
+    <item
+        android:id="@+id/nav_settings"
+        android:icon="@drawable/ic_settings_ffffff"
+        android:title="Settings" />
+</menu>
