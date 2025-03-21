@@ -1,6 +1,8 @@
 package com.example.cosmesticapp.adapter;
 
 import android.content.Context;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
