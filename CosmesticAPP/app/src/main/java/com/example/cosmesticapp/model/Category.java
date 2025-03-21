@@ -1,3 +1,4 @@
+// 22110311 - Tô Hữu Đức
 package com.example.cosmesticapp.model;
 
 public class Category {

@@ -1,4 +1,4 @@
-//Thuy Duong
+// 22110303 - Hoàng Thị Thùy Dương
 package com.example.cosmesticapp.activity;
 
 import android.content.Intent;

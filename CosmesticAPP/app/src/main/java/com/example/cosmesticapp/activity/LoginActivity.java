@@ -1,4 +1,4 @@
-//Thuy Duong
+// 22110410 - Huỳnh Thị Mỹ Tâm
 package com.example.cosmesticapp.activity;
 
 import android.content.Intent;

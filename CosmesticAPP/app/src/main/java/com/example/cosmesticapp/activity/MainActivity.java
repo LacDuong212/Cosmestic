@@ -1,3 +1,4 @@
+// 22110459 - Trần Triệu Vĩ
 package com.example.cosmesticapp.activity;
 
 import android.os.Bundle;

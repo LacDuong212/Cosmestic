@@ -1,3 +1,4 @@
+// 22110394 - Ong Vĩnh Phát
 package com.example.cosmesticapp.activity;
 
 import android.app.AlertDialog;
