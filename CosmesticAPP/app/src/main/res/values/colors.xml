@@ -5,4 +5,5 @@
     <color name="BackgroundColor">#fffcf5</color>
     <color name="FontColor">#e4bf6d</color>
     <color name="DarkFontColor">#1f1c17</color>
+    <color name="main_color_1">#FFD32F2F</color>
 </resources>

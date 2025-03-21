@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".activity.ForgetPassActivity">
+
+    <TextView
+        android:id="@+id/txtQuen"
+        android:layout_width="250dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="24dp"
+        android:text="Quên mật khẩu?"
+        android:textSize="26dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextEmailAddress"
+        android:layout_width="337dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="36dp"
+        android:drawableStart="@drawable/email"
+        android:ems="10"
+        android:hint="Nhập e-mail"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.216"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtQuen" />
+
+    <Button
+        android:id="@+id/btnGui"
+        android:layout_width="165dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="41dp"
+        android:background="@color/DarkFontColor"
+        android:text="Gửi"
+        android:textColor="@color/FontColor"
+        android:textColorLink="@color/DarkFontColor"
+        android:textSize="18sp"
+        app:backgroundTint="@color/DarkFontColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmailAddress"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/imageBtnBack"
+        android:layout_width="49dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="32dp"
+        android:padding="2dp"
+        android:scaleType="centerInside"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/editTextEmailAddress"
+        app:layout_constraintEnd_toStartOf="@+id/txtQuen"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.851"
+        app:srcCompat="@drawable/btn_arrow4" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
