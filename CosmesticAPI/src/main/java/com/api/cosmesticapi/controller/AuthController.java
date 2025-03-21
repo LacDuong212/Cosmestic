@@ -1,8 +1,6 @@
 package com.api.cosmesticapi.controller;
 
-import com.api.cosmesticapi.dto.ApiResponse;
-import com.api.cosmesticapi.dto.RegisterRequest;
-import com.api.cosmesticapi.dto.VerifyOTPRequest;
+import com.api.cosmesticapi.dto.*;
 import com.api.cosmesticapi.service.Impl.UserServiceImpl;
 import com.api.cosmesticapi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +29,13 @@ public class AuthController { // 22110394 - Ong Vĩnh Phát
     public ResponseEntity<ApiResponse> verifyOTP(@RequestBody VerifyOTPRequest request) {
         ApiResponse response = userService.verifyOTP(request);
         return ResponseEntity.status(response.isSuccess() ? HttpStatus.OK : HttpStatus.BAD_REQUEST)
+                .body(response);
+    }
+
+    @PostMapping("/login") // 22110410 - Huỳnh Thị Mỹ Tâm
+    public ResponseEntity<LoginResponse> login(@RequestBody LoginRequest request) {
+        LoginResponse response = userService.login(request);
+        return ResponseEntity.status(response.isSuccess() ? HttpStatus.OK : HttpStatus.UNAUTHORIZED)
                 .body(response);
     }
 

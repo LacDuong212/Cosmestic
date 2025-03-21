@@ -1,8 +1,7 @@
+// 22110394 - Ong Vĩnh Phát
 package com.api.cosmesticapi.service.Impl;
 
-import com.api.cosmesticapi.dto.ApiResponse;
-import com.api.cosmesticapi.dto.RegisterRequest;
-import com.api.cosmesticapi.dto.VerifyOTPRequest;
+import com.api.cosmesticapi.dto.*;
 import com.api.cosmesticapi.entity.OTP;
 import com.api.cosmesticapi.entity.User;
 import com.api.cosmesticapi.repository.OTPRepository;
@@ -17,7 +16,7 @@ import java.util.Optional;
 import java.util.Random;
 
 @Service
-public class UserServiceImpl implements UserService { // 22110394 - Ong Vĩnh Phát
+public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userRepository;
 
@@ -106,5 +105,37 @@ public class UserServiceImpl implements UserService { // 22110394 - Ong Vĩnh Ph
         Random random = new Random();
         int otp = 100000 + random.nextInt(900000);
         return String.valueOf(otp);
+    }
+
+    @Override
+    public LoginResponse login(LoginRequest request) { // 22110410 - Huỳnh Thị Mỹ Tâm
+        // Try to find user by username or email
+        Optional<User> userOptional = userRepository.findByUsername(request.getUsername());
+
+        if (userOptional.isEmpty()) {
+            // If not found by username, try email
+            userOptional = userRepository.findByEmail(request.getUsername());
+        }
+
+        if (userOptional.isEmpty()) {
+            return new LoginResponse(false, "Invalid credentials", null);
+        }
+
+        User user = userOptional.get();
+
+        // Check if user is active (has verified email)
+        if (!user.isActive()) {
+            return new LoginResponse(false, "Account not activated. Please verify your email.", null);
+        }
+
+        // Verify password
+        if (user.getPassword().equals(request.getPassword())) {
+            // Don't send password to client
+            user.setPassword(null);
+            return new LoginResponse(true, "Login successful", user);
+        } else {
+            return new LoginResponse(false, "Invalid credentials", null);
+        }
+
     }
 }
