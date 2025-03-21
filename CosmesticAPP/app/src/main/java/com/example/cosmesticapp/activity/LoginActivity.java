@@ -1,5 +1,6 @@
 package com.example.cosmesticapp.activity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -14,6 +15,7 @@ import com.example.cosmesticapp.R;
 
 public class LoginActivity extends AppCompatActivity {
     TextView registerText;
+    TextView forgetText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,13 @@ public class LoginActivity extends AppCompatActivity {
         registerText = findViewById(R.id.registerText);
         registerText.setOnClickListener(v -> {
             Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+            startActivity(intent);
+            finish();
+        });
+
+        forgetText = (TextView) findViewById(R.id.forgetpassText);
+        forgetText.setOnClickListener(v -> {     // 22110410 - Huynh Thi My Tam
+            Intent intent = new Intent(LoginActivity.this, ForgetPassActivity.class);
             startActivity(intent);
             finish();
         });

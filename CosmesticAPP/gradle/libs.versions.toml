@@ -13,6 +13,7 @@ converter-gson = "2.11.0"
 logging-interceptor = "4.12.0"
 glide = "4.14.2"
 glideCompiler = "4.14.2"
+circleImg="3.1.0"
 
 
 [libraries]
@@ -29,6 +30,7 @@ converterGson = { group = "com.squareup.retrofit2", name = "converter-gson", ver
 loggingInterceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "logging-interceptor" }
 glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
 glideCompiler = { group = "com.github.bumptech.glide", name = "compiler", version.ref = "glideCompiler" }
+circleImg = { group = "de.hdodenhof", name = "circleimageview", version.ref = "circleImg" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
