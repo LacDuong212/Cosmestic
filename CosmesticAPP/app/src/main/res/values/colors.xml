@@ -2,7 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="BackgroundColor">#FFFAF4</color>
-    <color name="FontColor">#E8BC6C</color>
-    <color name="DarkFontColor">#0D0D0D</color>
+    <color name="BackgroundColor">#fffcf5</color>
+    <color name="FontColor">#e4bf6d</color>
+    <color name="DarkFontColor">#1f1c17</color>
 </resources>

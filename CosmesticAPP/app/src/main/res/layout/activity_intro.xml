@@ -5,20 +5,22 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/BackgroundColor"
     tools:context=".IntroActivity">
+
     <TextView
         android:id="@+id/textViewAppName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cocoon Cusmetic"
-        android:textColor="#0000FF"
+        android:text="COCOON CUSMETIC"
+        android:textColor="@color/DarkFontColor"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/imageViewBurger"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed"  />
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <ImageView
         android:id="@+id/imageViewBurger"
@@ -36,7 +38,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Mỹ phẩm thuần chay cho nét đẹp Việt"
+        android:text="Mỹ phẩm thuần chay \n cho nét đẹp Việt"
+        android:textAlignment="center"
         android:textColor="@color/DarkFontColor"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -46,6 +49,8 @@
         app:layout_constraintTop_toBottomOf="@+id/imageViewBurger" />
 
     <Button
+        style="?android:attr/borderlessButtonStyle"
+
         android:id="@+id/buttonGetStarted"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -53,9 +58,10 @@
         android:layout_marginTop="48dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="64dp"
-        android:background="@drawable/rounded_button"
+        android:background="@color/DarkFontColor"
         android:text="Bắt đầu"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/FontColor"
+        android:textColorLink="@color/FontColor"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
