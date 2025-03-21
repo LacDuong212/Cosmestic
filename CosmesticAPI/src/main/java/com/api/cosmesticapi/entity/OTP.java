@@ -11,10 +11,10 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 
 @Entity
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class OTP {
+@Data
+public class OTP { // 22110394 - Ong Vĩnh Phát
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

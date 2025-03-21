@@ -1,14 +1,15 @@
+// 22110311 - Tô Hữu Đức
 package com.example.cosmesticapp.model;
 
 public class Product {
     private Long productId;
     private String productName;
-    private String productImage;
+    private String image;
 
-    public Product(Long productId, String productName, String productImage) {
+    public Product(Long productId, String productName, String image) {
         this.productId = productId;
         this.productName = productName;
-        this.productImage = productImage;
+        this.image = image;
     }
 
     public Long getProductId() {
@@ -27,11 +28,11 @@ public class Product {
         this.productName = productName;
     }
 
-    public String getProductImage() {
-        return productImage;
+    public String getImage() {
+        return image;
     }
 
-    public void setProductImage(String productImage) {
-        this.productImage = productImage;
+    public void setImage(String image) {
+        this.image = image;
     }
 }

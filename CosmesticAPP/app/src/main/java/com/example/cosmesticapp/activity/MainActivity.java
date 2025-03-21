@@ -1,5 +1,8 @@
+// 22110459 - Trần Triệu Vĩ
+// 22110394 - Ong Vĩnh Phát
 package com.example.cosmesticapp.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -11,6 +14,7 @@ import com.example.cosmesticapp.Fragments.ProfileFragment;
 import com.example.cosmesticapp.Fragments.SettingsFragment;
 import com.example.cosmesticapp.Fragments.SupportFragment;
 import com.example.cosmesticapp.R;
+import com.example.cosmesticapp.share.SharedPrefManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -18,7 +22,7 @@ import com.google.android.material.snackbar.Snackbar;
 public class MainActivity extends AppCompatActivity {
     FloatingActionButton fab;
     BottomNavigationView botNav;
-
+    //
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

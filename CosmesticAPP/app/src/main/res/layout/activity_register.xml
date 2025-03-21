@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--22110303 - Hoàng Thị Thuỳ Dương-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/BackgroundColor"
     tools:context=".activity.RegisterActivity">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="413dp"
         android:layout_height="180dp"
-        android:background="@drawable/top_background2"
+        android:background="@drawable/banner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,9 +23,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="0dp"
         android:text="Create"
-        android:textColor="#3F51B5"
+        android:textColor="@color/DarkFontColor"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,15 +37,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="0dp"
         android:text="Account"
-        android:textColor="#3F51B5"
+        android:textColor="@color/DarkFontColor"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.134"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/createText" />
+
     <EditText
         android:id="@+id/nameEditText"
         android:layout_width="347dp"
@@ -59,6 +60,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/accountText" />
+
     <EditText
         android:id="@+id/emailEditText"
         android:layout_width="347dp"
@@ -74,6 +76,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameEditText" />
+
     <EditText
         android:id="@+id/passwordEditText"
         android:layout_width="347dp"
@@ -89,6 +92,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailEditText" />
+
     <EditText
         android:id="@+id/confirmPwdEditText"
         android:layout_width="347dp"
@@ -148,7 +152,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="Already Registered? Login here"
-        android:textColor="#007fff"
+        android:textColor="@color/DarkFontColor"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -1,9 +1,14 @@
+//22110304 - Võ Nguyễn Hòa Lạc Dương
+//22110311 - Tô Hữu Đức
 package com.example.cosmesticapp.service;
 
 import com.example.cosmesticapp.dto.ApiResponse;
+import com.example.cosmesticapp.dto.LoginRequest;
+import com.example.cosmesticapp.dto.LoginResponse;
 import com.example.cosmesticapp.dto.RegisterRequest;
 import com.example.cosmesticapp.dto.VerifyOTPRequest;
 import com.example.cosmesticapp.model.Category;
+import com.example.cosmesticapp.model.Product;
 
 import java.util.List;
 
@@ -11,14 +16,21 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
-public interface ApiService {
+public interface ApiService { // 22110394 - Ong Vĩnh Phát
     @POST("api/auth/register")
     Call<ApiResponse> registerUser(@Body RegisterRequest registerRequest);
 
     @POST("api/auth/verify-otp")
     Call<ApiResponse> verifyOTP(@Body VerifyOTPRequest verifyOTPRequest);
 
-    @GET("categories.php")
+    @GET("api/categories")
     Call<List<Category>> getAllCategories();
+
+    @GET("api/products/category/{categoryId}/price-asc")
+    Call<List<Product>> getProductsByCategoryOrderByPriceAsc(@Path("categoryId") int categoryId);
+
+    @POST("api/auth/login") // 22110410 - Huỳnh Thị Mỹ Tâm
+    Call<LoginResponse> loginUser(@Body LoginRequest loginRequest);
 }
