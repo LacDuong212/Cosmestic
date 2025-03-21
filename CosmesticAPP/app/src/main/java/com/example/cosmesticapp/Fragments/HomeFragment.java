@@ -28,8 +28,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class HomeFragment extends Fragment implements CategoryAdapter.OnCategoryClickListener {
-
-    private ApiService apiService;
     private List<Category> categoryList;
     private CategoryAdapter categoryAdapter;
 
@@ -52,8 +50,7 @@ public class HomeFragment extends Fragment implements CategoryAdapter.OnCategory
     }
 
     private void getCategory() {
-        apiService = RetrofitClient.getClient("http://192.168.162.212:8080/").create(ApiService.class);
-        apiService.getAllCategories().enqueue(new Callback<List<Category>>() {
+        RetrofitClient.getInstance().getApi().getAllCategories().enqueue(new Callback<List<Category>>() {
             @Override
             public void onResponse(Call<List<Category>> call, Response<List<Category>> response) {
                 if (response.isSuccessful() && response.body() != null) {
@@ -75,8 +72,7 @@ public class HomeFragment extends Fragment implements CategoryAdapter.OnCategory
     }
 
     private void getProductsByCategoryOrderByPriceAsc(int categoryId) {
-        apiService = RetrofitClient.getClient("http://192.168.162.212:8080/").create(ApiService.class);
-        apiService.getProductsByCategoryOrderByPriceAsc(categoryId).enqueue(new Callback<List<Product>>() {
+        RetrofitClient.getInstance().getApi().getProductsByCategoryOrderByPriceAsc(categoryId).enqueue(new Callback<List<Product>>() {
             @Override
             public void onResponse(Call<List<Product>> call, Response<List<Product>> response) {
                 if (response.isSuccessful() && response.body() != null) {

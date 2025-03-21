@@ -6,11 +6,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.cosmesticapp.R;
 import com.example.cosmesticapp.model.Category;
 
@@ -44,6 +46,15 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
         Category category = categoryList.get(position);
         holder.tenSp.setText(category.getCategoryName());
 
+        // Load image using Glide, Picasso, or another image loading library
+        // Assuming your Category class has a method getImageUrl() or getImagePath()
+        if (category.getImage() != null && !category.getImage().isEmpty()) {
+            // Using Glide (add this dependency if not already added)
+            Glide.with(context)
+                    .load(category.getImage())
+                    .into(holder.imageView);
+        }
+
         // Xử lý sự kiện click
         holder.itemView.setOnClickListener(v -> {
             if (onCategoryClickListener != null) {
@@ -59,10 +70,13 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView tenSp;
+        public ImageView imageView; // Add this line
+
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             tenSp = itemView.findViewById(R.id.cateName);
+            imageView = itemView.findViewById(R.id.cateImage); // Add this line
         }
     }
 }

@@ -40,8 +40,9 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.MyViewHo
         Product product = productList.get(position);
         holder.productName.setText(product.getProductName());
 
-        String imageUrl = product.getProductImage();
-        Glide.with(context).load(imageUrl).into(holder.productImage);
+        Glide.with(context)
+                .load(product.getImage())
+                .into(holder.productImage);
 
         holder.itemView.setOnClickListener(v ->
                 Toast.makeText(context, "Bạn đã chọn sản phẩm: " + product.getProductName(), Toast.LENGTH_SHORT).show()
@@ -59,7 +60,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.MyViewHo
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            productImage = itemView.findViewById(R.id.cateImage);
+            productImage = itemView.findViewById(R.id.cateProductImage);
             productName = itemView.findViewById(R.id.cateName);
         }
     }
