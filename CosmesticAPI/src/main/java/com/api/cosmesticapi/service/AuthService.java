@@ -1,13 +1,14 @@
 package com.api.cosmesticapi.service;
 
-import com.phatbee.backendmopr.dto.OtpVerificationRequest;
-import com.phatbee.backendmopr.dto.RegistrationRequest;
-import com.phatbee.backendmopr.dto.RegistrationResponse;
-import com.phatbee.backendmopr.dto.VerificationResponse;
-import com.phatbee.backendmopr.entity.Otp;
-import com.phatbee.backendmopr.entity.User;
-import com.phatbee.backendmopr.repository.OtpRepository;
-import com.phatbee.backendmopr.repository.UserRepository;
+
+import com.api.cosmesticapi.DTO.OtpVerificationRequest;
+import com.api.cosmesticapi.DTO.RegistrationRequest;
+import com.api.cosmesticapi.DTO.RegistrationResponse;
+import com.api.cosmesticapi.DTO.VerificationResponse;
+import com.api.cosmesticapi.entity.OTP;
+import com.api.cosmesticapi.entity.User;
+import com.api.cosmesticapi.repository.OTPRepository;
+import com.api.cosmesticapi.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +23,7 @@ public class AuthService {
     private UserRepository userRepository;
 
     @Autowired
-    private OtpRepository otpRepository;
+    private OTPRepository otpRepository;
 
     @Autowired
     private EmailService emailService;
@@ -52,7 +53,7 @@ public class AuthService {
         // Generate and send OTP
         String otp = generateOtp();
         saveOtp(request.getEmail(), otp);
-        emailService.sendOtpEmail(request.getEmail(), otp);
+        emailService.sendOTPEmail(request.getEmail(), otp);
 
         return new RegistrationResponse(true,
                 "Registration successful. Please check your email for verification code.",
@@ -61,16 +62,16 @@ public class AuthService {
 
     public VerificationResponse verifyOtp(OtpVerificationRequest request) {
         // Find valid OTP
-        Optional<Otp> otpOptional = otpRepository.findByEmailAndCodeAndUsedFalseAndExpiryDateAfter(
-                request.getEmail(), request.getOtp(), LocalDateTime.now());
+        Optional<OTP> otpOptional = otpRepository.findByEmailAndCode(
+                request.getEmail(), request.getOtp());
 
         if (otpOptional.isEmpty()) {
             return new VerificationResponse(false, "Invalid or expired verification code");
         }
 
         // Mark OTP as used
-        Otp otp = otpOptional.get();
-        otp.setUsed(true);
+        OTP otp = otpOptional.get();
+        otp.setVerified(true);
         otpRepository.save(otp);
 
         // Find and activate user
@@ -98,18 +99,11 @@ public class AuthService {
         if (user.isActive()) {
             return new RegistrationResponse(false, "Account is already activated", null);
         }
-        // Invalidate any existing OTPs
-        List<Otp> existingOtps = otpRepository.findByEmailAndUsedFalseAndExpiryDateAfter(
-                email, LocalDateTime.now());
-        existingOtps.forEach(existingOtp -> {
-            existingOtp.setUsed(true);
-            otpRepository.save(existingOtp);
-        });
 
         // Generate and send new OTP
         String otp = generateOtp();
         saveOtp(email, otp);
-        emailService.sendOtpEmail(email, otp);
+        emailService.sendOTPEmail(email, otp);
 
         return new RegistrationResponse(true,
                 "Verification code has been resent to your email", email);
@@ -123,11 +117,11 @@ public class AuthService {
     }
 
     private void saveOtp(String email, String otp) {
-        Otp otpEntity = new Otp();
+        OTP otpEntity = new OTP();
         otpEntity.setEmail(email);
         otpEntity.setCode(otp);
         otpEntity.setExpiryDate(LocalDateTime.now().plusMinutes(10)); // 10 minute expiry
-        otpEntity.setUsed(false);
+        otpEntity.setVerified(false);
         otpRepository.save(otpEntity);
     }
 
