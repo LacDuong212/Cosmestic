@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.cosmesticapp.Fragments.HomeFragment;
 import com.example.cosmesticapp.R;
 import com.example.cosmesticapp.model.Category;
 
@@ -21,7 +22,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
     private Context context;
     private List<Category> array;
 
-    public CategoryAdapter(Context context, List<Category> array) {
+    public CategoryAdapter(HomeFragment context, List<Category> array) {
         this.context = context;
         this.array = array;
     }
