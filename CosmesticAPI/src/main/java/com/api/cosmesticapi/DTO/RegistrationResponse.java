@@ -1,4 +1,4 @@
-package com.api.cosmesticapi.DTO;
+package com.api.cosmesticapi.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
