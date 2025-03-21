@@ -1,6 +1,6 @@
 package com.example.cosmesticapp.dto;
 
-public class VerifyOTPRequest {
+public class VerifyOTPRequest {     // 22110394 - Ong Vĩnh Phát
     private String email;
     private String otp;
 

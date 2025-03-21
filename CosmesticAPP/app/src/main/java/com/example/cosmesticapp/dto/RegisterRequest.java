@@ -1,6 +1,6 @@
 package com.example.cosmesticapp.dto;
 
-public class RegisterRequest {
+public class RegisterRequest {     // 22110394 - Ong Vĩnh Phát
     private String username;
     private String password;
     private String email;

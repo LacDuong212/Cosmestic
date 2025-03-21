@@ -10,15 +10,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.cosmesticapp.R;
 import com.example.cosmesticapp.dto.ApiResponse;
@@ -30,7 +26,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class RegisterActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity { // 22110394 - Ong Vĩnh Phát
     private EditText nameEditText, emailEditText, passwordEditText, confirmPwdEditText;
     private RadioButton maleRadioButton, femaleRadioButton;
     private ImageButton registerButton;
@@ -42,6 +38,7 @@ public class RegisterActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_register);
 
+        // 22110394 - Ong Vĩnh Phát
         // Initialize UI components
         nameEditText = findViewById(R.id.nameEditText);
         emailEditText = findViewById(R.id.emailEditText);
@@ -57,6 +54,7 @@ public class RegisterActivity extends AppCompatActivity {
 //        genderRadioGroup.addView(maleRadioButton);
 //        genderRadioGroup.addView(femaleRadioButton);
 
+        // 22110394 - Ong Vĩnh Phát
         // Set click listener for register button
         registerButton.setOnClickListener(v -> {
             if (validateInputs()) {
@@ -64,6 +62,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
+        // 22110394 - Ong Vĩnh Phát
         // Set click listener for login text
         loginTextView.setOnClickListener(v -> {
             // Navigate back to login activity
@@ -72,7 +71,7 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
-    private boolean validateInputs() {
+    private boolean validateInputs() { // 22110394 - Ong Vĩnh Phát
         String name = nameEditText.getText().toString().trim();
         String email = emailEditText.getText().toString().trim();
         String password = passwordEditText.getText().toString().trim();
@@ -133,7 +132,7 @@ public class RegisterActivity extends AppCompatActivity {
         return true;
     }
 
-    private void registerUser() {
+    private void registerUser() { // 22110394 - Ong Vĩnh Phát
         // Show progress dialog
         ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Registering...");
@@ -179,13 +178,13 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
-    private void showOTPVerificationDialog(String email) {
+    private void showOTPVerificationDialog(String email) { // 22110394 - Ong Vĩnh Phát
         // Create a dialog for OTP verification
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Email Verification");
 
         // Inflate a custom layout for the dialog
-        View view = getLayoutInflater().inflate(R.layout.dialog_otp_verification, null);
+        View view = getLayoutInflater().inflate(R.layout.ongvinhphat_22110394__dialog_otp_verification, null);
         EditText otpEditText = view.findViewById(R.id.otpEditText);
         Button verifyButton = view.findViewById(R.id.verifyButton);
         Button resendButton = view.findViewById(R.id.resendButton);

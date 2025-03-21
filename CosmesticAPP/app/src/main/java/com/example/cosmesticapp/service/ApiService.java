@@ -13,9 +13,11 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface ApiService {
+    // 22110394 - Ong Vĩnh Phát
     @POST("api/auth/register")
     Call<ApiResponse> registerUser(@Body RegisterRequest registerRequest);
 
+    // 22110394 - Ong Vĩnh Phát
     @POST("api/auth/verify-otp")
     Call<ApiResponse> verifyOTP(@Body VerifyOTPRequest verifyOTPRequest);
 
