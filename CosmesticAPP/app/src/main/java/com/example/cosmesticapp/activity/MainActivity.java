@@ -1,4 +1,5 @@
 // 22110459 - Trần Triệu Vĩ
+// 22110394 - Ong Vĩnh Phát
 package com.example.cosmesticapp.activity;
 
 import android.content.Intent;
@@ -66,16 +67,5 @@ public class MainActivity extends AppCompatActivity {
                     .commit();
         }
 
-    }
-
-    private void logout() {
-        // Clear user data from SharedPreferences
-        SharedPrefManager.getInstance(this).clear();
-
-        // Redirect to login screen
-        Intent intent = new Intent(this, LoginActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
-        finish();
     }
 }
