@@ -33,7 +33,7 @@ Here are some screenshots showcasing the app's interface:
    ```
 2. Open the project in Android Studio
 3. Sync Gradle dependencies
-4. Configure the API base URL in `app/src/main/java/com/example/cosmetics/network/RetrofitClient.java`
+4. Configure the API base URL in `app/src/main/java/com/example/cosmeticapp/service/RetrofitClient.java`
 5. Build and run the application on your device or emulator
 
 ## API Integration
