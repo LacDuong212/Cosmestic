@@ -17,7 +17,7 @@ public class ApiResponse<T> {
         this.isSuccess = isSuccess;
         this.message = message;
     }
-
++
     public ApiResponse(boolean isSuccess, String message, T data) {
         this.isSuccess = isSuccess;
         this.message = message;

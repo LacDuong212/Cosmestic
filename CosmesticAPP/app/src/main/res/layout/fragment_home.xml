@@ -187,6 +187,7 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCategory"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginStart="20dp"
