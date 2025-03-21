@@ -41,11 +41,6 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_register);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
 
         // Initialize UI components
         nameEditText = findViewById(R.id.nameEditText);
@@ -57,10 +52,10 @@ public class RegisterActivity extends AppCompatActivity {
         registerButton = findViewById(R.id.imageButton1);
         loginTextView = findViewById(R.id.registerText);
 
-        // Adding RadioGroup programmatically since it's missing in the layout
-        RadioGroup genderRadioGroup = new RadioGroup(this);
-        genderRadioGroup.addView(maleRadioButton);
-        genderRadioGroup.addView(femaleRadioButton);
+//        // Adding RadioGroup programmatically since it's missing in the layout
+//        RadioGroup genderRadioGroup = new RadioGroup(this);
+//        genderRadioGroup.addView(maleRadioButton);
+//        genderRadioGroup.addView(femaleRadioButton);
 
         // Set click listener for register button
         registerButton.setOnClickListener(v -> {
