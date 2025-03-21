@@ -7,16 +7,16 @@ Welcome to the Cosmetics Store mobile application repository! This Android-based
 Here are some screenshots showcasing the app's interface:
 
 ### Intro
-<img src="https://raw.githubusercontent.com/LacDuong212/Cosmestic/refs/heads/master/screenshots/Intro.jpg" width="250" alt="Intro">
+<p align="center"> <img src="https://raw.githubusercontent.com/LacDuong212/Cosmestic/refs/heads/master/screenshots/Intro.jpg" width="250" alt="Intro">
 
 ### Log In Page
-<img src="https://raw.githubusercontent.com/LacDuong212/Cosmestic/refs/heads/master/screenshots/Log_In.jpg" width="250" alt="Log In">
+<p align="center"> <img src="https://raw.githubusercontent.com/LacDuong212/Cosmestic/refs/heads/master/screenshots/Log_In.jpg" width="250" alt="Log In">
 
 ### Sign Up Page
-<img src="https://raw.githubusercontent.com/LacDuong212/Cosmestic/refs/heads/master/screenshots/Sign_Up.jpg" width="250" alt="Sign Up">
+<p align="center"> <img src="https://raw.githubusercontent.com/LacDuong212/Cosmestic/refs/heads/master/screenshots/Sign_Up.jpg" width="250" alt="Sign Up">
 
 ### Home Page
-<img src="https://raw.githubusercontent.com/LacDuong212/Cosmestic/refs/heads/master/screenshots/Home.jpg" width="250" alt="Home">
+<p align="center"> <img src="https://raw.githubusercontent.com/LacDuong212/Cosmestic/refs/heads/master/screenshots/Home.jpg" width="250" alt="Home">
 
 ## Technology Stack
 - **Frontend**: Android Native (Java)
