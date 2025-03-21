@@ -1,6 +1,7 @@
 // 22110459 - Trần Triệu Vĩ
 package com.example.cosmesticapp.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -12,6 +13,7 @@ import com.example.cosmesticapp.Fragments.ProfileFragment;
 import com.example.cosmesticapp.Fragments.SettingsFragment;
 import com.example.cosmesticapp.Fragments.SupportFragment;
 import com.example.cosmesticapp.R;
+import com.example.cosmesticapp.share.SharedPrefManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -64,5 +66,16 @@ public class MainActivity extends AppCompatActivity {
                     .commit();
         }
 
+    }
+
+    private void logout() {
+        // Clear user data from SharedPreferences
+        SharedPrefManager.getInstance(this).clear();
+
+        // Redirect to login screen
+        Intent intent = new Intent(this, LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
     }
 }
