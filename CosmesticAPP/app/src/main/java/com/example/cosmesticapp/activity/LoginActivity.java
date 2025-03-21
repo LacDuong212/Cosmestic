@@ -15,6 +15,7 @@ import com.example.cosmesticapp.R;
 
 public class LoginActivity extends AppCompatActivity {
     TextView registerText;
+    TextView forgetText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,13 @@ public class LoginActivity extends AppCompatActivity {
         registerText = findViewById(R.id.registerText);
         registerText.setOnClickListener(v -> {     // 22110394 - Ong Vĩnh Phát
             Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+            startActivity(intent);
+            finish();
+        });
+
+        forgetText = (TextView) findViewById(R.id.forgetpassText);
+        forgetText.setOnClickListener(v -> {     // 22110410 - Huynh Thi My Tam
+            Intent intent = new Intent(LoginActivity.this, ForgetPassActivity.class);
             startActivity(intent);
             finish();
         });

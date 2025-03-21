@@ -184,7 +184,7 @@ public class RegisterActivity extends AppCompatActivity { // 22110394 - Ong Vĩn
         builder.setTitle("Email Verification");
 
         // Inflate a custom layout for the dialog
-        View view = getLayoutInflater().inflate(R.layout.ongvinhphat_22110394__dialog_otp_verification, null);
+        View view = getLayoutInflater().inflate(R.layout.dialog_otp_verification, null);
         EditText otpEditText = view.findViewById(R.id.otpEditText);
         Button verifyButton = view.findViewById(R.id.verifyButton);
         Button resendButton = view.findViewById(R.id.resendButton);
