@@ -1,6 +1,6 @@
 package com.example.cosmesticapp.activity;
 
-import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -25,6 +25,10 @@ public class LoginActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        SharedPreferences sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean("isLoggedIn", true); // Lưu trạng thái đăng nhập
+        editor.apply();
 
         registerText = findViewById(R.id.registerText);
         registerText.setOnClickListener(v -> {
