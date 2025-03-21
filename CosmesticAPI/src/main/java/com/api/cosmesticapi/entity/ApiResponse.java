@@ -1,4 +1,4 @@
-package com.api.cosmesticapi.model;
+package com.api.cosmesticapi.entity;
 
 import lombok.Getter;
 import lombok.Setter;
