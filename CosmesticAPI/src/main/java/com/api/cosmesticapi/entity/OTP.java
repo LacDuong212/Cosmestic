@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class OTP {
+public class OTP { // 22110394 - Ong Vĩnh Phát
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Random;
 
-public interface EmailService {
+public interface EmailService { // 22110394 - Ong Vĩnh Phát
     void sendOTPEmail(String toEmail, String otp);
     boolean sendEmail(String to, String subject, String text);
     String generateOtp();
