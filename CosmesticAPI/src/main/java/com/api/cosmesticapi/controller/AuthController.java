@@ -1,26 +1,37 @@
 package com.api.cosmesticapi.controller;
 
-
+import com.api.cosmesticapi.dto.ApiResponse;
+import com.api.cosmesticapi.dto.RegisterRequest;
+import com.api.cosmesticapi.dto.VerifyOTPRequest;
+import com.api.cosmesticapi.service.Impl.UserServiceImpl;
+import com.api.cosmesticapi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/auth")
+
 public class AuthController {
     @Autowired
-    private UserService userService;
+    private UserService userService = new UserServiceImpl();
+
     @PostMapping("/register")
-    public ApiResponse<Void> registerUser(@RequestBody RegisterRequest registerRequest) {
-        return userService.register(registerRequest);
+    public ResponseEntity<ApiResponse> register(@RequestBody RegisterRequest request) {
+        ApiResponse response = userService.registerUser(request);
+        return ResponseEntity.status(response.isSuccess() ? HttpStatus.OK : HttpStatus.BAD_REQUEST)
+                .body(response);
     }
 
-    @PostMapping("/register/verify")
-    public ApiResponse<Void> verifyRegisterUser(@RequestBody OtpVerifyRequest otpVerifyRequest) {
-        return userService.verifyRegister(otpVerifyRequest);
+    @PostMapping("/verify-otp")
+    public ResponseEntity<ApiResponse> verifyOTP(@RequestBody VerifyOTPRequest request) {
+        ApiResponse response = userService.verifyOTP(request);
+        return ResponseEntity.status(response.isSuccess() ? HttpStatus.OK : HttpStatus.BAD_REQUEST)
+                .body(response);
     }
 
-    @PostMapping("/login")
-    public ApiResponse<LoginResponse> loginUser(@RequestBody LoginRequest loginRequest) {
-        return userService.login(loginRequest);
-    }
 }
