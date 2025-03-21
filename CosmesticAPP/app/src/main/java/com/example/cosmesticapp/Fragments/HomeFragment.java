@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.cosmesticapp.R;
 import com.example.cosmesticapp.adapter.CategoryAdapter;
 import com.example.cosmesticapp.model.Category;
+import com.example.cosmesticapp.service.RetrofitClient;
 
 import java.util.List;
 
@@ -34,8 +35,8 @@ public class HomeFragment extends Fragment {
 
     private void getCategory() {
         rvCate = rvCate.findViewById(R.id.rvCategory);
-        apiService = RetrofitClient.getRetrofit().create(APIService.class);
-        apiService.getCategoriesAll().enqueue(new Callback<List<Category>>() {
+        apiService = RetrofitClient.getClient("categories.php");
+        apiService.getAllCategories().enqueue(new Callback<List<Category>>() {
             @Override
             public void onResponse(Call<List<Category>> call, Response<List<Category>> response) {
                 if (response.isSuccessful()) {
