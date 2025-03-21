@@ -26,6 +26,9 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
     // Interface để xử lý sự kiện click
     public interface OnCategoryClickListener {
         void onCategoryClick(int categoryId);
+
+        // Xử lý sự kiện click từ CategoryAdapter
+        void onCategoryClick(int categoryId, String categoryName);
     }
 
     public CategoryAdapter(Context context, List<Category> categoryList, OnCategoryClickListener listener) {
@@ -58,7 +61,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
         // Xử lý sự kiện click
         holder.itemView.setOnClickListener(v -> {
             if (onCategoryClickListener != null) {
-                onCategoryClickListener.onCategoryClick(category.getCategoryId().intValue());
+                onCategoryClickListener.onCategoryClick(category.getCategoryId().intValue(), category.getCategoryName());
             }
         });
     }
